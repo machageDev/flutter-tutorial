@@ -35,12 +35,31 @@ class MyScaffold extends StatelessWidget {
   const MyScaffold({super.key});
   @override
   Widget build(BuildContext context) {
-    run Material(
-      
-    )
+    return Material(
+      child: Column(
+        children: [
+          MyAppBar(
+            title: Text(
+              'Example title',
+              style:
+              Theme.of(context).primaryTextTheme.titleLarge,
+            ),
+            ),
+            const Expanded(child: Centre(Child: Text('hello world!'))),
+        ],)
+
+    );
   }
 }
-  
+void main()
+{
+  runApp(
+    const MaterialApp(
+      title: 'MyApp',
+      home: SafeArea(child: MyScaffold()),
+    ),
+  );
+}  
   
 
   
